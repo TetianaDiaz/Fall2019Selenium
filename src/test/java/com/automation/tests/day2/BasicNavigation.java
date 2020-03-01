@@ -23,7 +23,7 @@ public class BasicNavigation {
         //method that return page title
         String title = driver.getTitle(); //returns <title>Some title</title> text
         String expectedTitle = "Google"; // we provide it
-        System.out.println("Title is" + title);
+        System.out.println("Title is " + title);
         if(expectedTitle.equals(title)){
             System.out.println("Test passed");
         }else{
@@ -31,6 +31,7 @@ public class BasicNavigation {
         }
         //go to another website withing the same window
         driver.navigate().to("http://amazon.com");
+        Thread.sleep(3000); //for demo, wait 3 seconds
 
         if(driver.getTitle().toLowerCase().contains("amazon")){
             System.out.println("test passed!");
@@ -40,7 +41,15 @@ public class BasicNavigation {
 
         //comeback to google
         driver.navigate().back();
+        //checking if page title is equal to Google
+        //.getTitle() - returns page title
         verifyEquals(driver.getTitle(), "Google");
+
+        //move forward in the browser history
+        //again going to amazon
+        driver.navigate().forward();
+        System.out.println("title: " + driver.getTitle());
+        //driver.getTitle() - returns page title of the page that is currently opened
         //must be at the end
 
         driver.close(); //to close browser
@@ -48,6 +57,12 @@ public class BasicNavigation {
 
     }
 
+    /**
+     * Check if to strigns are same. If print Test passed! message
+     * Otherwise, print Test Failed message
+     * @param arg1
+     * @param arg2
+     */
     public static void verifyEquals(String arg1, String arg2){
         if(arg1.equals(arg2)){
             System.out.println("test passed!");
