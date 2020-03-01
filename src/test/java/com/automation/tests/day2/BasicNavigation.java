@@ -48,11 +48,19 @@ public class BasicNavigation {
         //move forward in the browser history
         //again going to amazon
         driver.navigate().forward();
+        Thread.sleep(3000);
         System.out.println("title: " + driver.getTitle());
         //driver.getTitle() - returns page title of the page that is currently opened
+
+        System.out.println("URL" + driver.getCurrentUrl()) ;
+       //to get URL
         //must be at the end
+        //driver.navigate().to() = driver.get()
+        driver.navigate().refresh();//to reload the page
+        Thread.sleep(3000);
 
         driver.close(); //to close browser
+
         //browser cannot close itself
 
     }
