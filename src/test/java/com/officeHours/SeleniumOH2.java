@@ -61,12 +61,17 @@ public class SeleniumOH2 {
         System.out.println("items found: " + count.getText());
 
 
-        driver.quit();
+        //<a class="button ajax_add_to_cart_button btn btn-default"
+        // href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=e817bb0705dd58da8db074c69f729fd8"
+        // rel="nofollow" title="Add to cart" data-id-product="1">
 
+        //a - is a link
+        //span - description of link, attribute definition
 
+        WebElement addToCart = driver.findElement(By.className("button ajax_add_to_cart_button btn btn-default"));
+        addToCart.click();
 
-
-
+    //    driver.quit();
 
     }
 
