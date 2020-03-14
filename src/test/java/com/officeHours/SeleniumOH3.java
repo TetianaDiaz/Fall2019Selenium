@@ -33,8 +33,13 @@ Most cases a locator will require to be unique
       7. Xpath
       8. cssSelector
 
+      Which one to choose?
+      1. id
+      2. cssSelector
+      3. Xpath
+
       LinkText{
-      <a href="/autocomplete">Autocomplete</a>
+      <a href="www.google.com">Autocomplete</a>
 
       Tag --> <a>
         Attribute --> href
@@ -44,7 +49,44 @@ Most cases a locator will require to be unique
         <a></a> --> This is the tag for link
         href --> url, end point for navigation
 
-        For linkText we have to use the whole text
+        For linkText we have to use the whole text  --> "Autocomplete"
+        }
+
+        partialLinkText{
+        <a href="www.google.com">Autocomplete</a>
+        We only need a portion of the text
+        Portion of text  -->  "Auto"
+
+        <a href="/javascript_error">JAvaScript onload event error</a>
+
+        linkTetx --> "JavaScript onload event error"
+        partialLinkText --> "onload"
+        partialLinkTExt --> "JavaScript"
+        partialLinkText --> "event"
+        }
+
+        className vs name{
+        <button class="btn btn-primary" onclick="button2()"
+                name="button2">Button 2</button>
+                Tag --> button
+                Attributes --> class, onclick, name
+                Value --> "button2", "button2()", "btn btn-primary"
+
+                className Locator will find element with --> class attribute
+                name locator will find the element with --> name attribute
+                }
+
+      Xpath{
+             1. Absolute Xpath(this is not recommended)
+             begin with single dash
+             /html/body/div/div[2]/div/div[1]/button[1]
+             2. Relative Xpath
+             begins with double slash
+
+
+                }
+
+
 
 
 
