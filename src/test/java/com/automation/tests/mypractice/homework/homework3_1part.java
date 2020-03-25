@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.sql.Driver;
 import java.util.List;
 
-public class homework2 {
+public class homework3_1part {
 
     private String URL = "https://practice-cybertekschool.herokuapp.com/";
     private WebDriver driver;

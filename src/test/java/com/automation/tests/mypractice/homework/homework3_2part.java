@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class homework2SecondPart {
+public class homework3_2part {
 
     private String URL1 = "http://tempmailaddress.com";
     private String URL2 = "http://practice.cybertekschool.com";
