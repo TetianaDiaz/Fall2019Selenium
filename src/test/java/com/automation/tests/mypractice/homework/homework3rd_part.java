@@ -3,6 +3,7 @@ package com.automation.tests.mypractice.homework;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -51,6 +52,40 @@ public class homework3rd_part {
         driver.findElement(By.xpath("//a[@href='/status_codes']")).click();
         driver.findElement(By.xpath("//a[@href='status_codes/200']")).click();
 
+        WebElement msg = driver.findElement(By.tagName("p"));
+        Assert.assertTrue(msg.getText().contains("This page returned a 200 status code."));
+
+//        String actual = driver.findElement(By.xpath("//p/*[1]")).getText();
+//        String expected = "This page returned a 200 status code.";
+//        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void test10(){
+        driver.findElement(By.xpath("//a[@href='/status_codes']")).click();
+        driver.findElement(By.xpath("//a[@href='status_codes/301']")).click();
+
+        WebElement msg = driver.findElement(By.tagName("p"));
+        Assert.assertTrue(msg.getText().contains("This page returned a 301 status code."));
+
+    }
+
+    @Test
+    public void test11(){
+        driver.findElement(By.xpath("//a[@href='/status_codes']")).click();
+        driver.findElement(By.xpath("//a[@href='status_codes/404']")).click();
+
+        WebElement msg = driver.findElement(By.tagName("p"));
+        Assert.assertTrue(msg.getText().contains("This page returned a 404 status code."));
+    }
+
+    @Test
+    public void test12(){
+        driver.findElement(By.xpath("//a[@href='/status_codes']")).click();
+        driver.findElement(By.xpath("//a[@href='status_codes/500']")).click();
+
+        WebElement msg = driver.findElement(By.tagName("p"));
+        Assert.assertTrue(msg.getText().contains("This page returned a 500 status code."));
     }
 
     @AfterMethod
