@@ -1,4 +1,4 @@
-package com.automation.tests.mypractice.homework;
+package com.automation.tests.mypractice.homework3;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
@@ -10,7 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.sql.Driver;
 import java.util.List;
 
 public class homework3_1part {
